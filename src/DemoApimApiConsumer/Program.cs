@@ -9,10 +9,15 @@ namespace DemoApimApiConsumer
     static class Program
     {
         const string apimBaseUrl = "https://ncdemoapim.azure-api.net";
-        const string apimKey = "56fbb4f917314b35933c0bc7aae57fa4";
+        const string apimKey = "XX";
 
         static void Main()
         {
+            if (apimKey.StartsWith("XX"))
+            {
+                Console.WriteLine("==> MISSING Ocp-Apim-Subscription-Key value. Update your code !!");
+                return;
+            }
             do
             {
                 MakeRequest();
